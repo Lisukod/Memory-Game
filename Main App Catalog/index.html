@@ -8,57 +8,82 @@
     <link rel="stylesheet" href="./CSS/style.css">
 </head>
 <body>
-    <section class="information-tab">
-
-    </section>
-    <main class="memory-game-container">
-        <div class="memory-card">
-            <img src="./files/svg/react.svg" alt="React" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+    <main class="memory-game-table">
+        <section class="information-tab">
+            <button class="information-tab__reset-button" onclick="startNewGame()">
+                New game
+            </button>
+            <span class="information-tab__wins">
+                Wins: 
+                <span class="information-tab__wins__counter">0</span>
+            </span>
+            <span class="information-tab__attempts">
+                Attempts:
+                <span class="information-tab__attempts__counter">1</span>
+            </span>
+            <span class="information-tab__steps">
+                Moves:
+                <span class="information-tab__steps__counter">0</span>
+            </span>
+            <div class="information-tab__found">
+                Found:
+                <div class="information-tab__found__tokens">
+                    <img src="./files/svg/angular.svg" data-token="angular" alt="Token of found angular" class="found-card-token">
+                    <img src="./files/svg/aurelia.svg" data-token="aurelia" alt="Token of found aurelia" class="found-card-token">
+                    <img src="./files/svg/backbone.svg" data-token="backbone" alt="Token of found backbone" class="found-card-token">
+                    <img src="./files/svg/ember.svg" data-token="ember" alt="Token of found ember" class="found-card-token">
+                    <img src="./files/svg/react.svg" data-token="react" alt="Token of found react" class="found-card-token">
+                    <img src="./files/svg/vue.svg" data-token="vue" alt="Token of found vue" class="found-card-token">
+                </div>
+            </div>
+        </section>
+        <div class="memory-card" data-cardtype="react">
+            <img src="./files/svg/react.svg" alt="React" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/react.svg" alt="React" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="react">
+            <img src="./files/svg/react.svg" alt="React" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/angular.svg" alt="Angular" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="angular">
+            <img src="./files/svg/angular.svg" alt="Angular" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/angular.svg" alt="Angular" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="angular">
+            <img src="./files/svg/angular.svg" alt="Angular" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/ember.svg" alt="Ember" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="ember">
+            <img src="./files/svg/ember.svg" alt="Ember" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/ember.svg" alt="Ember" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="ember">
+            <img src="./files/svg/ember.svg" alt="Ember" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/vue.svg" alt="Vue" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="vue">
+            <img src="./files/svg/vue.svg" alt="Vue" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/vue.svg" alt="Vue" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="vue">
+            <img src="./files/svg/vue.svg" alt="Vue" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/backbone.svg" alt="Backbone" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="backbone">
+            <img src="./files/svg/backbone.svg" alt="Backbone" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/backbone.svg" alt="Backbone" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="backbone">
+            <img src="./files/svg/backbone.svg" alt="Backbone" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/aurelia.svg" alt="Aurelia" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="aurelia">
+            <img src="./files/svg/aurelia.svg" alt="Aurelia" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
-        <div class="memory-card">
-            <img src="./files/svg/aurelia.svg" alt="Aurelia" class="card-front">
-            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="card-back">
+        <div class="memory-card" data-cardtype="aurelia">
+            <img src="./files/svg/aurelia.svg" alt="Aurelia" class="face-up">
+            <img src="./files/svg/js-badge.svg" alt="Memory Card Back" class="face-down">
         </div>
     </main>
     <script src="./JS/main.js"></script>

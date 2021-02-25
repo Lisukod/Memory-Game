@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Sigmar+One);
+
 * {
     padding: 0;
     margin: 0;
@@ -7,13 +9,43 @@
 body {
     display: flex;
     height: 100vh;
-    background: #060AB2;
+    // background: #060AB2;
+    background: linear-gradient(225deg, rgba(13,99,149,1) 1%, rgba(6,10,178,1) 76%);
+    background-attachment: fixed;
 }
 
-.memory-game-container {
+.information-tab {
+    position: relative;
+    width: 100%;
+    // background: #FFFFFF;
+    background: #f5b3625e;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 15px;
+    font: 20px sans-serif;
+    color: #FFFFFF
+}
+
+.information-tab__reset-button {
+    background: #bd7200;
+    border: none;
+    padding: 5px;
+    font: inherit;
+    color: white;
+    text-align: right;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.no-clicks {
+    pointer-events: none;
+}
+
+.memory-game-table {
     width: 640px;
     height: 640px;
-    margin: auto;
+    margin: 5vh auto;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
@@ -39,17 +71,49 @@ body {
     }
 }
 
-.card-front,
-.card-back {
+.face-up,
+.face-down {
     width: 100%;
     height: 100%;
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    // background: #1C7CCC;
+    background: #af660b;
     backface-visibility: hidden;
 }
 
-.card-front {
+.face-up {
     transform: rotateY(180deg);
+}
+
+.information-tab__found {
+    text-align: center;
+}
+
+.information-tab__wins,
+.information-tab__attempts,
+.information-tab__steps,
+.information-tab__found,
+.information-tab__found__tokens {
+    margin-top: 5px;
+}
+
+.found-card-token {
+    width: 40px;
+    height: 40px;
+    opacity: .3;
+    filter: grayscale(100%);
+}
+
+.found-card-token--vissible {
+        opacity: 1;
+        filter: grayscale(0%);
+        transition: .5s;
+    }
+
+@media screen and (max-width: 1023px) {
+    .memory-game-table {   
+        margin: 0 auto;
+    }
 }
